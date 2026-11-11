@@ -1,0 +1,31 @@
+seed: 42
+
+data:
+  uci_zip_url: "https://archive.ics.uci.edu/static/public/179/secom.zip"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  secom_data_file: "secom.data"
+  secom_labels_file: "secom_labels.data"
+  secom_names_file: "secom.names"
+
+preprocessing:
+  train_fraction: 0.70
+  drop_constant: true
+  high_missing_flag_threshold: 0.30
+  high_missing_drop_threshold: 0.55
+  add_missing_indicators: true
+  indicator_min_missing_rate: 0.01
+  primary_imputation: "median_indicator"
+  iterative_imputation:
+    max_iter: 10
+    n_nearest_features: 20
+    tol: 0.001
+
+drift:
+  n_time_bins: 5
+  psi_warn_threshold: 0.25
+  ks_alpha: 0.01
+
+reports:
+  dir: "reports"
+  figures_dir: "reports/figures"

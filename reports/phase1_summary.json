@@ -1,0 +1,179 @@
+{
+  "load_info": {
+    "n_rows": 1567,
+    "n_features": 590,
+    "n_failures": 104,
+    "raw_was_monotonic_increasing": true,
+    "n_duplicate_timestamps": 33
+  },
+  "split_info": {
+    "train_fraction": 0.7,
+    "split_index": 1096,
+    "train_start": "2008-07-19 11:55:00",
+    "train_end": "2008-09-26 02:26:00",
+    "test_start": "2008-09-26 03:12:00",
+    "test_end": "2008-10-17 06:07:00",
+    "train_n": 1096,
+    "train_failures": 78,
+    "train_fail_rate": 0.07116788321167883,
+    "test_n": 471,
+    "test_failures": 26,
+    "test_fail_rate": 0.055201698513800426
+  },
+  "missingness_profile_train": {
+    "n_features_total": 590,
+    "n_constant_or_all_nan": 122,
+    "overall_cell_missing_rate": 0.049225225782506495,
+    "n_zero_missing": 148,
+    "n_gt_1pct_missing": 59,
+    "n_gt_10pct_missing": 52,
+    "n_gt_30pct_missing": 32,
+    "n_gt_50pct_missing": 24,
+    "n_gt_70pct_missing": 20,
+    "n_gt_90pct_missing": 8
+  },
+  "preprocessor_median_indicator": {
+    "imputation_method": "median_indicator",
+    "n_input_features": 590,
+    "n_constant_dropped": 122,
+    "n_high_missing_flagged": 32,
+    "n_high_missing_dropped": 24,
+    "n_kept_sensor_features": 444,
+    "n_missing_indicators": 30,
+    "n_output_features": 474,
+    "flagged_not_dropped": [
+      "sensor_72",
+      "sensor_73",
+      "sensor_112",
+      "sensor_247",
+      "sensor_345",
+      "sensor_346",
+      "sensor_385",
+      "sensor_519"
+    ]
+  },
+  "preprocessor_iterative": {
+    "imputation_method": "iterative",
+    "n_input_features": 590,
+    "n_constant_dropped": 122,
+    "n_high_missing_flagged": 32,
+    "n_high_missing_dropped": 24,
+    "n_kept_sensor_features": 444,
+    "n_missing_indicators": 0,
+    "n_output_features": 444,
+    "flagged_not_dropped": [
+      "sensor_72",
+      "sensor_73",
+      "sensor_112",
+      "sensor_247",
+      "sensor_345",
+      "sensor_346",
+      "sensor_385",
+      "sensor_519"
+    ]
+  },
+  "imputation_comparison": {
+    "n_eval_features": 444,
+    "n_masked_train_cells": 47768,
+    "n_masked_test_cells": 20218,
+    "methods": {
+      "median_indicator": {
+        "train_nrmse": 1.0443513818358785,
+        "train_nmae": 0.5908939553245338,
+        "test_nrmse": 215.93856061666287,
+        "test_nmae": 2.1542751032951704,
+        "fit_transform_seconds": 0.08731430000625551
+      },
+      "iterative": {
+        "train_nrmse": 0.6746282518594082,
+        "train_nmae": 0.3220663117728249,
+        "test_nrmse": 207.73564159916563,
+        "test_nmae": 2.029270904077739,
+        "fit_transform_seconds": 55.54025109997019
+      }
+    },
+    "n_indicator_features": 30,
+    "n_indicators_fisher_p_lt_0_05": 8,
+    "top_associated_indicators": [
+      {
+        "feature": "sensor_72",
+        "train_missing_rate": 0.4443430656934307,
+        "odds_ratio": 0.3784586411705056,
+        "p_value": 0.00020957028805747594
+      },
+      {
+        "feature": "sensor_73",
+        "train_missing_rate": 0.4443430656934307,
+        "odds_ratio": 0.3784586411705056,
+        "p_value": 0.00020957028805747594
+      },
+      {
+        "feature": "sensor_345",
+        "train_missing_rate": 0.4443430656934307,
+        "odds_ratio": 0.3784586411705056,
+        "p_value": 0.00020957028805747594
+      },
+      {
+        "feature": "sensor_346",
+        "train_missing_rate": 0.4443430656934307,
+        "odds_ratio": 0.3784586411705056,
+        "p_value": 0.00020957028805747594
+      },
+      {
+        "feature": "sensor_112",
+        "train_missing_rate": 0.30383211678832117,
+        "odds_ratio": 0.3548716047093724,
+        "p_value": 0.0008099814814947819
+      }
+    ]
+  },
+  "drift_summary": {
+    "n_time_bins": 5,
+    "label_rate_across_bins_chi2_p": 1.0291333906321652e-07,
+    "train_fail_rate": 0.07116788321167883,
+    "test_fail_rate": 0.055201698513800426,
+    "train_n": 1096,
+    "test_n": 471,
+    "n_features_evaluated": 444,
+    "n_features_psi_flagged": 180,
+    "n_features_ks_fdr_flagged": 335,
+    "median_psi": 0.20477066723987347,
+    "max_psi": 2.972164982308101,
+    "top_drifted_features": [
+      {
+        "feature": "sensor_116",
+        "psi": 2.972164982308101,
+        "ks_fdr_q": 2.809421415110078e-114,
+        "std_mean_diff": 0.05229959733182735
+      },
+      {
+        "feature": "sensor_542",
+        "psi": 2.7886866295390007,
+        "ks_fdr_q": 1.854744504200101e-91,
+        "std_mean_diff": 0.9027145920131521
+      },
+      {
+        "feature": "sensor_80",
+        "psi": 2.705244814782379,
+        "ks_fdr_q": 2.2775416853111415e-31,
+        "std_mean_diff": 0.3676462096022166
+      },
+      {
+        "feature": "sensor_543",
+        "psi": 2.526307930647172,
+        "ks_fdr_q": 3.3430279540161245e-82,
+        "std_mean_diff": 0.9219743031389368
+      },
+      {
+        "feature": "sensor_40",
+        "psi": 2.0976038635446277,
+        "ks_fdr_q": 5.896270680729376e-59,
+        "std_mean_diff": 0.1725555902349373
+      }
+    ]
+  },
+  "figures": [
+    "reports\\figures\\phase1_drift_overview.png",
+    "reports\\figures\\phase1_missingness_overview.png"
+  ]
+}
