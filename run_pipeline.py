@@ -7,6 +7,7 @@ import json
 
 from secom_causal.config import load_config
 from secom_causal.phase1 import run_phase1
+from secom_causal.phase2 import run_phase2
 
 
 def main() -> None:
@@ -16,7 +17,7 @@ def main() -> None:
         "--phase",
         type=str,
         default="1",
-        help="Phase to run (currently supported: '1').",
+        help="Phase to run ('1', '2', or 'all').",
     )
     parser.add_argument(
         "--config",
@@ -30,6 +31,13 @@ def main() -> None:
     if args.phase == "1":
         summary = run_phase1(config)
         print(json.dumps(summary, indent=2, default=str))
+    elif args.phase == "2":
+        summary = run_phase2(config)
+        print(json.dumps(summary, indent=2, default=str))
+    elif args.phase == "all":
+        s1 = run_phase1(config)
+        s2 = run_phase2(config)
+        print(json.dumps({"phase1": s1, "phase2": s2}, indent=2, default=str))
     else:
         raise ValueError(f"Phase '{args.phase}' is not implemented yet.")
 

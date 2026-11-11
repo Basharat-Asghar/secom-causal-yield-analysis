@@ -29,3 +29,12 @@ drift:
 reports:
   dir: "reports"
   figures_dir: "reports/figures"
+
+phase2:
+  cv_splits: 5
+  bootstrap_resamples: 1000
+  confidence_level: 0.95
+  precision_targets:
+    - 0.15
+    - 0.20
+    - 0.30
