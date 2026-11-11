@@ -38,3 +38,31 @@ phase2:
     - 0.15
     - 0.20
     - 0.30
+
+phase3:
+  primary_imputation: "iterative"
+  n_bootstrap: 50
+  subsample_fraction: 0.75
+  l1_c: 0.25
+  tree_top_k: 40
+  mi_n_neighbors: 5
+  configs:
+    strict_45:
+      target_k: 45
+      corr_threshold: 0.85
+      w_stability_l1: 0.40
+      w_stability_tree: 0.35
+      w_mi: 0.25
+    broad_75:
+      target_k: 75
+      corr_threshold: 0.92
+      w_stability_l1: 0.40
+      w_stability_tree: 0.35
+      w_mi: 0.25
+    mi_heavy_55:
+      target_k: 55
+      corr_threshold: 0.88
+      w_stability_l1: 0.20
+      w_stability_tree: 0.25
+      w_mi: 0.55
+  default_screened_config: "strict_45"
